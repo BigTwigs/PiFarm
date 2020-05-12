@@ -77,9 +77,16 @@ export default function SoilMoisture() {
 
     const [suggestion,setSuggestion]=useState("");
     const suggestionArray={
-        0:"The moisture level in your growing medium is too high. This can lead to root rot if left untreated. Refrain from deploying nutrients to your plants and allow the growing medium to filter excess moisture out of the system.",
-        1:"The growing medium has an extremely low moisture level. This can lead to stunted growth and high heat can burn your plants at this time. Nutrients should be deployed as soon as possible.",
-        2: "The soil mositure level here refers to the moisture level of the growing medium in which your plants thrive in your hydroponic system.This measurement seeks to assist with deploying nutrients at the right time to your plants so that they remain neither underfed nor overfed.As a result, this measurements will give a good indication of when you should feed your plants during the course of the day."
+        0:{text:"The moisture level in your growing medium is too high. This can lead to root rot if left untreated. Refrain from deploying nutrients to your plants and allow the growing medium to filter excess moisture out of the system.",
+            value:"High Saturation"    
+        },
+        1:{text:"The growing medium has an extremely low moisture level. This can lead to stunted growth and high heat can burn your plants at this time. Nutrients should be deployed as soon as possible.",
+            value:"Low Saturation"
+
+    },
+        2: {text:"The soil mositure level here refers to the moisture level of the growing medium in which your plants thrive in your hydroponic system.This measurement seeks to assist with deploying nutrients at the right time to your plants so that they remain neither underfed nor overfed.As a result, this measurements will give a good indication of when you should feed your plants during the course of the day.",
+            value:"Neutral"
+    }
     };
 
     const compareMoistureValues=()=>{
@@ -113,7 +120,8 @@ export default function SoilMoisture() {
                         
                         <h3 style={{paddingTop:"4%",paddingBottom:"2%"}}>Last Time Watered: {lastWatered}</h3>
 
-                        <p>{suggestion}</p>
+                        <h2>{suggestion.value}</h2>
+                        <p>{suggestion.text}</p>
                     </Col>
                 </Row>
             </Container>   
