@@ -37,7 +37,7 @@ export default function SoilMoisture() {
     // },[]);
 
     useEffect(()=>{
-        firestore.collection("users").doc(uid).collection("moisture").onSnapshot(snapshot=>{
+        firestore.collection("users").doc(uid).collection("moisture").orderBy('timestamp','asc').onSnapshot(snapshot=>{
             let changes = snapshot.docChanges();
             changes.forEach(change=>{
                 if(change.type==="added"){

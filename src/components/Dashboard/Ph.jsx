@@ -37,7 +37,7 @@ export default function Ph() {
     // },[]);
 
     useEffect(()=>{
-        firestore.collection("users").doc(uid).collection("ph").onSnapshot(snapshot=>{
+        firestore.collection("users").doc(uid).collection("ph").orderBy('timestamp','asc').onSnapshot(snapshot=>{
             let changes=snapshot.docChanges();
             changes.forEach(change=>{
                 if(change.type==="added"){

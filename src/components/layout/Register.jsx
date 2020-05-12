@@ -40,7 +40,18 @@ const Register = () => {
   const {currentUser} = useContext(AuthContext);
 
     if(currentUser){
-      return (<><Redirect to="/Dashboard" /></>);
+        if (currentUser.uid!=null){
+            //recording user ID that is currently logged into the app in a firebase collection
+            const uid = currentUser.uid;
+            console.log(uid)  
+            app.firestore().collection('current user').add({
+                userid: uid,
+                timestamp: app.firestore.FieldValue.serverTimestamp()
+            }).catch(function(error) {
+                console.error(error);
+            }); 
+        }
+        return (<><Redirect to="/Dashboard" /></>);
     }
     
 

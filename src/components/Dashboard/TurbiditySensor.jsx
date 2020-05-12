@@ -35,7 +35,7 @@ export default function TurbiditySensor() {
     // },[]);
 
     useEffect(()=>{
-        firestore.collection("users").doc(uid).collection("ppm").onSnapshot(snapshot=>{
+        firestore.collection("users").doc(uid).collection("ppm").orderBy('timestamp','asc').onSnapshot(snapshot=>{
             let changes = snapshot.docChanges();
             changes.forEach(change=>{
                 if(change.type==="added"){
