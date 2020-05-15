@@ -1,3 +1,13 @@
+## Getting Started
+
+To get started with this project, you need to have two things set up first:</br>
+1.You need to have node installed on your computer (preferably the latest version)</br>
+2.In the terminal, you need to run the command "npm install"</br></br>
+
+From then on, you can run the application as you please by using the command "npm run start" in the terminal.
+
+Note: You must be in your project's directory in the terminal for these commands to work.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
