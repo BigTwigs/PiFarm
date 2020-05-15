@@ -1,6 +1,8 @@
-To get started with this project, you need to have two things set up first:
-1.You need to have node installed on your computer (preferably the latest version)
-2.In the terminal, you need to run the command "npm install"
+## Getting Started
+
+To get started with this project, you need to have two things set up first:</br>
+1.You need to have node installed on your computer (preferably the latest version)</br>
+2.In the terminal, you need to run the command "npm install"</br></br>
 
 From then on, you can run the application as you please by using the command "npm run start" in the terminal.
 
