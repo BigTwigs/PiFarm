@@ -20,13 +20,7 @@ const Login = () => {
       });
     }
 
-    // function handleSubmit(e){
-    //     e.preventDefault();
-    //     console.log(details.email,details.password);
-    //     auth.signInWithEmailAndPassword(details.email,details.password).then(response=>{
-    //         console.log(response);
-    //     });
-    // }
+
     const handleSubmit=(
       async event=>{
         event.preventDefault();
@@ -44,7 +38,6 @@ const Login = () => {
       if (currentUser.uid!=null){
         //recording user ID that is currently logged into the app in a firebase collection
         const uid = currentUser.uid;
-        console.log(uid)  
         app.firestore().collection('current user').add({
           userid: uid,
           timestamp: app.firestore.FieldValue.serverTimestamp()
